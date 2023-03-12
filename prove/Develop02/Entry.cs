@@ -2,24 +2,24 @@
 class Entry
 {
     //attributes
-    public string date;
-    public string prompt;
-    public string response;
+    public string _date;
+    public string _prompt;
+    public string _response;
    
 
     //constructor
     static string GetDateTime()
     {
         string currentDateTime = "";
-        currentDateTime = DateTime,Now,ToString("h:mm:ss tt yyyy-mm-dd");
+        currentDateTime = DateTime.Now.ToString("h:mm:ss tt yyyy-mm-dd");
         return currentDateTime;
     }
 
-    public Entry(string _date, string _prompt, string _response)
+    public Entry(string date, string prompt, string response)
     {
-        date = _date;
-        prompt = _prompt;
-        response = _response;
+        _date = date;
+        _prompt = prompt;
+        _response = response;
 
         //require date prompt and response prompt to be place here.
        
@@ -29,13 +29,13 @@ class Entry
     public void DisplayEntry()//method
     {
         //print a line w/3 attributes on them.
-        Console.WriteLine(date, prompt, response);
+        Console.WriteLine(_date, _prompt, _response);
 
     }
 
     public string getEntryAsCSV()//method
     {
-        return string.Format("{0}|{1}|{2}", date, prompt, response);
+        return string.Format("{0}|{1}|{2}", _date, _prompt, _response);
     }
 
     
